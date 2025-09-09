@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/img/fav_icon.png" type="image/png" sizes="192x192">
+</head>
+
+<body>
+    <header>
+        <div class="particulas"></div>
+        <nav class="navegacao">
+            <ul class="menu">
+                <li>
+                    <a href="#inicio" class="menu-link">Início</a>
+                    <a href="#sobre" class="menu-link">Sobre</a>
+                    <a href="#projetos" class="menu-link">Projetos</a>
+                    <a href="#contatos" class="menu-link">Contatos</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main id="#inicio" class="cabecalho">
+        <img src="./assets/img/avatar_meu.png" alt="foto do meu Avatar" class="foto-perfil">
+        <h1>João Pedro</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Full-stack</p>
+    </main>
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Estudante de Desenvolvimento de Sistemas do SENAI, tenho foco em criar soluções
+                eficientes, escaláveis e seguras para diferentes necessidades de negócio. Tenho experiência em análise,
+                desenvolvimento e manutenção de softwares, sempre buscando aplicar boas práticas de programação, padrões
+                de arquitetura e metodologias ágeis.
+                Durante minha trajetória, trabalhei com linguagens como JAVA, JAVASCRIPT, HTML, CSS, C#, C++,
+                PHP,FLUTTER, DART, REACT.JS, REACT NATIVE, MySQL e SQL, além de frameworks modernos que potencializam a
+                produtividade e qualidade das entregas. Também possuo conhecimento em bancos de dados relacionais e não
+                relacionais, versionamento de código (Git) e integração de APIs.
+                Sou movido por desafios e pelo aprendizado constante, acompanhando as tendências tecnológicas para
+                entregar sistemas que realmente agreguem valor. Além das habilidades técnicas, prezo pela comunicação
+                clara e pelo trabalho em equipe, entendendo que um bom software é resultado da colaboração entre
+                profissionais e clientes.
+                Estou em busca de oportunidades para aplicar minhas competências, crescer profissionalmente e contribuir
+                para o desenvolvimento de soluções que façam a diferença no mercado.</p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="./assets/img/projeto1.png" alt="Foto da página da Galeria Online" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Galeria Online</h3>
+                    <p class="paragrafo-projetos">Uma API RESTful para gerenciamento de imagens, construída com ASP.NET
+                        Core e Entity Framework. Ela permite o upload, listagem, atualização e exclusão de imagens, com
+                        todas as funcionalidades acessíveis via Swagger. Este projeto é a base para uma futura aplicação
+                        web completa com React.</p>
+                </div>
+            </div>
+            <div class="projetos-card">
+                <img src="./assets/img/projeto2.png" alt="Foto da página do FindCep" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">FindCep</h3>
+                    <p class="paragrafo-projetos">Desenvolvi uma aplicação que utiliza uma API para buscar dados de
+                        endereços a partir de um CEP. É simples e prático: basta digitar o número e pronto, você tem
+                        acesso a informações como rua, bairro e cidade. Um jeito rápido de encontrar o que você precisa!
+                    </p>
+                </div>
+            </div>
+            <div class="projetos-card">
+                <img src="./assets/img/Projeto_3.png" alt="Foto da página da Calculadora" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Event-Plus</h3>
+                    <p class="paragrafo-projetos">Desenvolvi um projeto em react.js, usando o router dom e npm, fiz o
+                        consumo de API para esse projeto que foi desenvolvida com c# ASP.NET feita do zero, usando
+                        também a famosa azure e criptografando a senha do usuario e do admin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form id="formulario" class="formulario-contato" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" id="mensagem" rows="6"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+
+    <script>
+
+        function enviarWhats(event) {
+
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5511944435919'
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            window.open(url, '_blank')
+        }
+
+    </script>
+
+</body>
+
+</html>
