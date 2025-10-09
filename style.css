@@ -19,14 +19,16 @@ html {
 }
 
 body {
-    background-color: var(--escuro);
+    background-color: var(--maisEscuro);
     color: var(--claro);
 }
 
 .navegacao {
+    display: flex;
+    justify-content: center;    
     position: fixed;
     top: 0;
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--escuro);
     width: 100%;
     z-index: 100;
     padding: 1.5rem;
@@ -54,7 +56,7 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    background: linear-gradient(90deg, #88CDF6, var(--claro));
     transition: width 0.5s ease;
 }
 
@@ -74,16 +76,16 @@ body {
 .foto-perfil {
     width: 265px;
     height: 265px;
-    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    box-shadow: 0 0 20px #88CDF6;
     border-radius: 50%;
-    border: 4px solid var(--vidro);
+    border: 4px solid var(--claro);
     animation: flutuar 5s ease-in-out infinite;
     margin-top: 120px;
 }
 
-h1 {
+.cabecalho h1 {
     font-size: 3rem;
-    color: var(--primaria);
+    color: var(--claro);
     font-weight: bold;
     margin: 20px;
 }
@@ -116,6 +118,7 @@ h1 {
 }
 
 .sobre-paragrafo {
+    text-align: center;
     font-size: 1.2rem;
 }
 
@@ -142,7 +145,7 @@ h1 {
 }
 
 .projetos-card:hover {
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    box-shadow: 0 10px 20px var(--claro);
     transform: translateY(-10px) scale(1.03);
 }
 
@@ -188,7 +191,7 @@ h1 {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(5px);
     padding: 2rem;
-    border: 1px solid var(--vidro);
+    border: 1px solid var(--claro);
     border-radius: 16px;
 }
 
@@ -203,8 +206,8 @@ h1 {
 }
 
 .campo-form:focus {
-    border-color: var(--secundaria);
-    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    border-color: var(--claro);
+    box-shadow: 0 0 20px black;
 }
 
 .grupo-form {
@@ -212,8 +215,8 @@ h1 {
 }
 
 .botao-form {
-    color: var(--claro);
-    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    color: var(--escuro);
+    background: linear-gradient(45deg, #88CDF6, var(--claro));
     padding: 1rem 2rem;
     border: none;
     border-radius: 8px;
@@ -225,7 +228,7 @@ h1 {
 
 .botao-form:hover{
     transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+    box-shadow: 0 5px 15px var(--claro);
 }
 
 .particulas {
@@ -236,7 +239,7 @@ h1 {
     height: 100%;
     z-index: -1;
     opacity: 0.5;
-    background: radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%), radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%), var(--maisEscuro);
+    background: radial-gradient(circle at 10% 20%, #88CDF6 0%, transparent 20%), radial-gradient(circle at 90% 80%, var(--claro) 0%, transparent 20%), var(--maisEscuro);
 }
 
 @keyframes flutuar {
@@ -247,4 +250,52 @@ h1 {
     50% {
         transform: translateY(-20%);
     }
+}
+
+@media screen and (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .navegacao {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cabecalho h1 {
+        font-size: 2.5rem;
+    }
+
+    .cabecalho-sub-titulo {
+        font-size: 1.2rem;
+    }
+
+    .projetos-titulo {
+        font-size: 2rem;
+    }
+
+    .formulario-contato{
+        margin-bottom: 20px;
+    }
+
+     .redes button{
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+        gap: 20px ;
+    }
+    
+}
+
+.redes button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
 }
